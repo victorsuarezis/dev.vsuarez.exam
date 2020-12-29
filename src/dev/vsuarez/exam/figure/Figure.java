@@ -14,13 +14,6 @@ import dev.vsuarez.exam.component.IGeometricFigure;
  */
 public abstract class Figure implements IGeometricFigure {
 	
-	public static final String CIRCLE_NAME = "Circulo";
-	public static final String SQUARE_NAME = "Cuadrado";
-	public static final String TRIANGLE_NAME = "Triangulo";
-	public static final String CIRCLE_CODE = "C";
-	public static final String SQUARE_CODE = "S";
-	public static final String TRIANGLE_CODE = "T";
-	
 	/**
 	 * Surface
 	 */
@@ -41,6 +34,11 @@ public abstract class Figure implements IGeometricFigure {
 	 */
 	private BigDecimal diameter = null;
 	
+	/**
+	 * ID
+	 */
+	private int id = 0;
+	
 //	/**
 //	 * Code of Figure
 //	 */
@@ -58,6 +56,31 @@ public abstract class Figure implements IGeometricFigure {
 //		this.code = code;
 //	}
 	
+	
+	
+	/**
+	 * Constructor
+	 * @param surface
+	 * @param base
+	 * @param height
+	 * @param diameter
+	 * @param code
+	 * @param name
+	 */
+	public Figure(BigDecimal base, BigDecimal height, BigDecimal diameter, int ID) {
+		super();
+		this.base = base;
+		this.height = height;
+		this.diameter = diameter;
+		this.id = ID;
+//		this.code = code;
+//		this.name = name;
+	}
+	
+	public Figure() {
+		super();
+	}
+
 	/**
 	 * Constructor
 	 * @param surface
@@ -147,5 +170,15 @@ public abstract class Figure implements IGeometricFigure {
 //		// TODO Auto-generated method stub
 //		return null;
 //	}
+	
+	@Override
+	public int getId() {
+		return this.id;
+	}
+
+	@Override
+	public void setID(int ID) {
+		this.id = ID;
+	}
 
 }

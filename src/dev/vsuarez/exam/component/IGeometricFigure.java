@@ -98,5 +98,17 @@ public interface IGeometricFigure {
 	 * @return BigDecimal Area
 	 */
 	public BigDecimal getArea();
+	
+	/**
+	 * Get ID
+	 * @return int ID
+	 */
+	public int getId();
+	
+	/**
+	 * Set ID
+	 * @param ID
+	 */
+	public void setID(int ID);
 
 }

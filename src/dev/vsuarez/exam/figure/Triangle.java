@@ -13,6 +13,9 @@ import dev.vsuarez.exam.component.IGeometricFigure;
  *
  */
 public class Triangle extends Figure implements IGeometricFigure {
+	
+	public static final String TRIANGLE_NAME = "Triangulo";
+	public static final String TRIANGLE_CODE = "T";
 
 	/**
 	 * @param surface
@@ -22,9 +25,20 @@ public class Triangle extends Figure implements IGeometricFigure {
 	 * @param code
 	 * @param name
 	 */
-	public Triangle(BigDecimal base, BigDecimal height, BigDecimal diameter, String code,
-			String name) {
-		super(base, height, diameter);
+	public Triangle(BigDecimal base, BigDecimal height, int ID) {
+		super(base, height, null, ID);
+	}
+	
+	/**
+	 * @param surface
+	 * @param base
+	 * @param height
+	 * @param diameter
+	 * @param code
+	 * @param name
+	 */
+	public Triangle(BigDecimal base, BigDecimal height) {
+		super(base, height, null);
 	}
 
 	@Override

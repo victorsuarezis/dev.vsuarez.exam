@@ -13,6 +13,9 @@ import dev.vsuarez.exam.component.IGeometricFigure;
  *
  */
 public class Circle extends Figure implements IGeometricFigure {
+	
+	public static final String CIRCLE_NAME = "Circulo";
+	public static final String CIRCLE_CODE = "C";
 
 	/**
 	 * @param surface
@@ -22,9 +25,20 @@ public class Circle extends Figure implements IGeometricFigure {
 	 * @param code
 	 * @param name
 	 */
-	public Circle(BigDecimal base, BigDecimal height, BigDecimal diameter, String code,
-			String name) {
-		super(base, height, diameter);
+	public Circle(BigDecimal diameter, int ID) {
+		super(null, null, diameter, ID);
+	}
+	
+	/**
+	 * @param surface
+	 * @param base
+	 * @param height
+	 * @param diameter
+	 * @param code
+	 * @param name
+	 */
+	public Circle(BigDecimal diameter) {
+		super(null, null, diameter);
 	}
 
 	@Override
@@ -66,4 +80,5 @@ public class Circle extends Figure implements IGeometricFigure {
 		BigDecimal pi = new BigDecimal(Math.PI);
 		return pi.multiply(diameter.pow(2).divide(new BigDecimal(4), 12, RoundingMode.HALF_UP));
 	}
+
 }

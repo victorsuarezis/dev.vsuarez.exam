@@ -12,6 +12,9 @@ import dev.vsuarez.exam.component.IGeometricFigure;
  *
  */
 public class Square extends Figure implements IGeometricFigure {
+	
+	public static final String SQUARE_NAME = "Cuadrado";
+	public static final String SQUARE_CODE = "S";
 
 	/**
 	 * @param surface
@@ -21,9 +24,20 @@ public class Square extends Figure implements IGeometricFigure {
 	 * @param code
 	 * @param name
 	 */
-	public Square(BigDecimal base, BigDecimal height, BigDecimal diameter, String code,
-			String name) {
-		super(base, height, diameter);
+	public Square(BigDecimal base, int ID) {
+		super(base, null, null, ID);
+	}
+	
+	/**
+	 * @param surface
+	 * @param base
+	 * @param height
+	 * @param diameter
+	 * @param code
+	 * @param name
+	 */
+	public Square(BigDecimal base) {
+		super(base, null, null);
 	}
 
 	@Override

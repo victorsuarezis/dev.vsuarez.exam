@@ -50,7 +50,7 @@ public class BuildFigure {
             if(diameterStr != null && !diameterStr.isEmpty())
             	diameter = new BigDecimal(diameterStr);
             
-        	Circle circle = new Circle(base, height, diameter, Circle.CIRCLE_CODE, Circle.CIRCLE_NAME);
+        	Circle circle = new Circle(diameter);
         	figure = circle;
         } else if("T".equalsIgnoreCase(selection)) {
         	System.out.println("La Figura seleccionada es: " + Triangle.TRIANGLE_NAME);
@@ -66,7 +66,8 @@ public class BuildFigure {
         		base = new BigDecimal(baseStr);
         	if(heightStr != null && !heightStr.isEmpty())
         		height = new BigDecimal(heightStr);
-        	Triangle triangle = new Triangle(base, height, diameter, Triangle.TRIANGLE_CODE, Triangle.CIRCLE_NAME);
+        	
+        	Triangle triangle = new Triangle(base, height);
         	figure = triangle;
         } else if("S".equalsIgnoreCase(selection)) {
         	System.out.println("La Figura seleccionada es: " + Square.SQUARE_NAME);
@@ -77,7 +78,7 @@ public class BuildFigure {
         	base = BigDecimal.ZERO;
         	if(baseStr != null && !baseStr.isEmpty())
         		base = new BigDecimal(baseStr);
-        	Square square = new Square(base, height, diameter, Square.SQUARE_CODE, Square.SQUARE_NAME);
+        	Square square = new Square(base);
         	figure = square;
         } else {
         	System.out.println("Entrada no Valida");
