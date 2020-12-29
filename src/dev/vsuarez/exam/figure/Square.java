@@ -21,9 +21,9 @@ public class Square extends Figure implements IGeometricFigure {
 	 * @param code
 	 * @param name
 	 */
-	public Square(BigDecimal surface, BigDecimal base, BigDecimal height, BigDecimal diameter, String code,
+	public Square(BigDecimal base, BigDecimal height, BigDecimal diameter, String code,
 			String name) {
-		super(surface, base, height, diameter);
+		super(base, height, diameter);
 	}
 
 	@Override
@@ -34,6 +34,21 @@ public class Square extends Figure implements IGeometricFigure {
 	@Override
 	public String getCode() {
 		return SQUARE_CODE;
+	}
+
+	@Override
+	public BigDecimal getArea(BigDecimal base, BigDecimal height, BigDecimal diameter) {
+		if(base == null)
+			base = BigDecimal.ZERO;
+		return base.pow(2);
+	}
+
+	@Override
+	public BigDecimal getArea() {
+		BigDecimal base = getBase();
+		if(base == null)
+			base = BigDecimal.ZERO;
+		return base.pow(2);
 	}
 
 }

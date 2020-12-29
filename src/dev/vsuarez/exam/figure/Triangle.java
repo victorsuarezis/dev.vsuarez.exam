@@ -4,6 +4,7 @@
 package dev.vsuarez.exam.figure;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import dev.vsuarez.exam.component.IGeometricFigure;
 
@@ -21,9 +22,9 @@ public class Triangle extends Figure implements IGeometricFigure {
 	 * @param code
 	 * @param name
 	 */
-	public Triangle(BigDecimal surface, BigDecimal base, BigDecimal height, BigDecimal diameter, String code,
+	public Triangle(BigDecimal base, BigDecimal height, BigDecimal diameter, String code,
 			String name) {
-		super(surface, base, height, diameter);
+		super(base, height, diameter);
 	}
 
 	@Override
@@ -34,6 +35,26 @@ public class Triangle extends Figure implements IGeometricFigure {
 	@Override
 	public String getCode() {
 		return TRIANGLE_CODE;
+	}
+
+	@Override
+	public BigDecimal getArea(BigDecimal base, BigDecimal height, BigDecimal diameter) {
+		if(base == null)
+			base = BigDecimal.ZERO;
+		if(height == null)
+			height = BigDecimal.ZERO;
+		return base.multiply(height).divide(new BigDecimal(2), 12, RoundingMode.HALF_UP);
+	}
+
+	@Override
+	public BigDecimal getArea() {
+		BigDecimal base = getBase();
+		BigDecimal height = getHeight();
+		if(base == null)
+			base = BigDecimal.ZERO;
+		if(height == null)
+			height = BigDecimal.ZERO;
+		return base.multiply(height).divide(new BigDecimal(2), 12, RoundingMode.HALF_UP);
 	}
 
 }

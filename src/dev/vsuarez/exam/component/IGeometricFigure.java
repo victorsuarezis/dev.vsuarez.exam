@@ -83,5 +83,20 @@ public interface IGeometricFigure {
 	 * @return String code
 	 */
 	public String getCode();
+	
+	/**
+	 * Get Area
+	 * @param base
+	 * @param height
+	 * @param diameter
+	 * @return BigDecimal Area
+	 */
+	public BigDecimal getArea(BigDecimal base, BigDecimal height, BigDecimal diameter);
+	
+	/**
+	 * Get Area
+	 * @return BigDecimal Area
+	 */
+	public BigDecimal getArea();
 
 }

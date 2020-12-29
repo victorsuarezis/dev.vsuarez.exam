@@ -14,9 +14,9 @@ import dev.vsuarez.exam.component.IGeometricFigure;
  */
 public abstract class Figure implements IGeometricFigure {
 	
-	public static final String CIRCLE_NAME = "Circle";
-	public static final String SQUARE_NAME = "Square";
-	public static final String TRIANGLE_NAME = "Triangle";
+	public static final String CIRCLE_NAME = "Circulo";
+	public static final String SQUARE_NAME = "Cuadrado";
+	public static final String TRIANGLE_NAME = "Triangulo";
 	public static final String CIRCLE_CODE = "C";
 	public static final String SQUARE_CODE = "S";
 	public static final String TRIANGLE_CODE = "T";
@@ -67,9 +67,8 @@ public abstract class Figure implements IGeometricFigure {
 	 * @param code
 	 * @param name
 	 */
-	public Figure(BigDecimal surface, BigDecimal base, BigDecimal height, BigDecimal diameter) {
+	public Figure(BigDecimal base, BigDecimal height, BigDecimal diameter) {
 		super();
-		this.surface = surface;
 		this.base = base;
 		this.height = height;
 		this.diameter = diameter;
